@@ -83,6 +83,8 @@ for i in "${!ABIS[@]}"; do
 	NDK_TRIPLE=$(ndk_triple_for_abi "$abi")
 
 	WRAPPER_BUILD_DIR="$ROOT_DIR/build-kmp-android-wrapper-$abi"
+	# 16 KB page size support (Android 15+): NDK r27 still aligns the RW LOAD segments on 4 KB
+	# by default, which makes the .so unloadable on devices using 16 KB memory pages.
 	cmake \
 		-S "$KMP_PUBLISH_DIR/wrapper" \
 		-B "$WRAPPER_BUILD_DIR" \
@@ -92,6 +94,7 @@ for i in "${!ABIS[@]}"; do
 		-DANDROID_STL=c++_shared \
 		-DTARGET_ABI="$abi" \
 		-DFAT_LIB_PATH="$(realpath "$fat_lib")" \
+		-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-z,max-page-size=16384" \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo
 
 	if ! cmake --build "$WRAPPER_BUILD_DIR"; then
