@@ -34,7 +34,7 @@ else()
 endif()
 
 set(EMBEDDED_RUBY_VM_ARCHIVE "embedded-ruby-vm-${_ERVM_ARCHIVE_PLATFORM}-${TARGET_ARCH}.tar.gz")
-set(EMBEDDED_RUBY_VM_URL "https://github.com/Scorbutics/embedded-ruby-vm/releases/download/v${EMBEDDED_RUBY_VM_VERSION}/${EMBEDDED_RUBY_VM_ARCHIVE}")
+set(EMBEDDED_RUBY_VM_URL "https://github.com/bfloo/embedded-ruby-vm/releases/download/v${EMBEDDED_RUBY_VM_VERSION}/${EMBEDDED_RUBY_VM_ARCHIVE}")
 
 message(STATUS "Embedded Ruby VM: ${EMBEDDED_RUBY_VM_URL}")
 

@@ -3,7 +3,7 @@
 
 set(LITECGSS_VERSION "1.0.0")
 set(LITECGSS_GIT_URL "https://gitlab.com/NuriYuri/litecgss.git")
-set(LITECGSS_GIT_TAG "development")
+set(LITECGSS_GIT_TAG "3d94877b11117e792fc8cae2f5c200162296bd24")
 
 string(TOLOWER "${TARGET_PLATFORM}" PLATFORM_LOWER)
 
@@ -55,7 +55,7 @@ add_external_dependency(
     VERSION                 ${LITECGSS_VERSION}
     GIT_REPOSITORY          ${LITECGSS_GIT_URL}
     GIT_TAG                 ${LITECGSS_GIT_TAG}
-    GIT_SHALLOW             TRUE
+    GIT_SHALLOW             FALSE
     GIT_SUBMODULES_RECURSE  TRUE
     
     CONFIGURE_COMMAND       ${LITECGSS_CONFIGURE_CMD}

@@ -3,7 +3,7 @@
 
 set(SFML_VERSION "2.6.1-es2")
 set(SFML_GIT_URL "https://github.com/Scorbutics/SFML-opengl-es2.git")
-set(SFML_GIT_TAG "HEAD")  # Can pin to specific commit for reproducibility
+set(SFML_GIT_TAG "00853f2aae29a8d279a3627db13146a39b1396df")  # Can pin to specific commit for reproducibility
 
 string(TOLOWER "${TARGET_PLATFORM}" PLATFORM_LOWER)
 set(SFML_DIR "${CMAKE_BINARY_DIR}/sfml/build_dir/${TARGET_ARCH}-${PLATFORM_LOWER}/sfml-${SFML_VERSION}")
@@ -56,7 +56,7 @@ add_external_dependency(
     VERSION             ${SFML_VERSION}
     GIT_REPOSITORY      ${SFML_GIT_URL}
     GIT_TAG             ${SFML_GIT_TAG}
-    GIT_SHALLOW         TRUE
+    GIT_SHALLOW         FALSE
 
     CONFIGURE_COMMAND   ${SFML_CONFIGURE_CMD}
     

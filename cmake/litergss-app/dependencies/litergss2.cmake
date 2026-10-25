@@ -3,7 +3,7 @@
 
 set(LITERGSS2_VERSION "2.0.0")
 set(LITERGSS2_GIT_URL "https://gitlab.com/pokemonsdk/litergss2.git")
-set(LITERGSS2_GIT_TAG "development")
+set(LITERGSS2_GIT_TAG "66a0ee3bf23927d59540d68c254e138c4fe03480")
 
 option(BUILD_SHARED_WRAPPER "Build single shared library wrapper (rgss_runtime) instead of archive" OFF)
 
@@ -46,7 +46,7 @@ add_external_dependency(
     VERSION             ${LITERGSS2_VERSION}
     GIT_REPOSITORY      ${LITERGSS2_GIT_URL}
     GIT_TAG             ${LITERGSS2_GIT_TAG}
-    GIT_SHALLOW         TRUE
+    GIT_SHALLOW         FALSE
 
     CONFIGURE_COMMAND   ${LITERGSS2_CONFIGURE_CMD}
 
