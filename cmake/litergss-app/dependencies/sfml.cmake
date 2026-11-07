@@ -2,8 +2,8 @@
 # Configuration for SFML (fork with OpenGL ES2 support)
 
 set(SFML_VERSION "2.6.1-es2")
-set(SFML_GIT_URL "https://github.com/Scorbutics/SFML-opengl-es2.git")
-set(SFML_GIT_TAG "27de19917dc83ede0989ccbded8b4ebb03e4af36")  # HEAD
+set(SFML_GIT_URL "https://github.com/bfloo/SFML-opengl-es2.git")
+set(SFML_GIT_TAG "660bdd31f5f2dfacf2713520d4ade2f29e05768b")  # fix/egl-core-fallback
 
 string(TOLOWER "${TARGET_PLATFORM}" PLATFORM_LOWER)
 set(SFML_DIR "${CMAKE_BINARY_DIR}/sfml/build_dir/${TARGET_ARCH}-${PLATFORM_LOWER}/sfml-${SFML_VERSION}")
